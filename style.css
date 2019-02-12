@@ -54,8 +54,30 @@ body {
     height: 500px;
 }
 
+.Answercard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, .5);
+}
+
 .btn {
     font-size: 3.2rem;
+}
+
+.correct {
+  transform: scale(1.02);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, .5);
+}
+
+.reduceOpacity {
+  opacity: 0.3;
+}
+
+.reduceOpacity:hover {
+  transform: none;
+}
+
+.correctLabel {
+  color:darkgreen;
 }
 
 .loadMoreBtn {
@@ -70,10 +92,25 @@ body {
     transition-property: transform;
 }
 
-.card-animated {
-    animation: in .6s ease-out .1s;
+.card-animated1 {
+    animation: in .7s ease-out .0s;
     animation-fill-mode: backwards;
 }
+.card-animated2 {
+    animation: in .7s ease-out .15s;
+    animation-fill-mode: backwards;
+}
+
+.card-animated3 {
+    animation: in .7s ease-out .3s;
+    animation-fill-mode: backwards;
+}
+
+.fade-in {
+  animation: fade 1.5s ease-out .6s;
+  animation-fill-mode: backwards;
+}
+
 
 svg {
     width: 6.4rem;
@@ -82,6 +119,18 @@ svg {
     margin-bottom: 1.6rem;
     display:flex;
 }
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        /* transform: translateX(-120px); */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes in {
     0% {
         opacity: 0;

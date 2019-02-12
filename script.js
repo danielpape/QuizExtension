@@ -82,20 +82,31 @@ let principles = [
 ];
 
 function generateLaws() {
-  var principleTest = principles[Math.floor(Math.random() * principles.length)];
-  document.getElementById('header').innerHTML = '<h2 class="title">' + principleTest.name + '</h2>';
-  var principle1 = principles[Math.floor(Math.random() * principles.length)];
-document.getElementById('Answercard1').innerHTML = '<h3 class="overview">' + principle1.overview + '</h3>';
-var principle2 = principles[Math.floor(Math.random() * principles.length)];
-document.getElementById('Answercard2').innerHTML = '<h3 class="overview">' + principle2.overview + '</h3>';
-var principle3 = principles[Math.floor(Math.random() * principles.length)];
-document.getElementById('Answercard3').innerHTML = '<h3 class="overview">' + principle3.overview + '</h3>';
+  var correctIndex = principles[Math.floor(Math.random() * principles.length)];
+  console.log(correctIndex);
+  principles.splice(principles.indexOf(correctIndex),1);
+  console.log(principles);
+  var incorrectIndex1 = principles[Math.floor(Math.random() * principles.length)];
+  principles.splice(principles.indexOf(incorrectIndex1),1);
+  console.log(principles);
+  var incorrectIndex2 = principles[Math.floor(Math.random() * principles.length)];
+
+  var options = [correctIndex,incorrectIndex1,incorrectIndex2];
+  console.log(options);
+
+document.getElementById('header').innerHTML = '<h2 class="title">' + correctIndex.name + '</h2>';
+document.getElementById('CorrectAnswer').innerHTML = '<h3 class="overview">' + options[0].overview + '</h3>';
+document.getElementById('Answercard2').innerHTML = '<h3 class="overview">' + options[1].overview + '</h3>';
+document.getElementById('Answercard3').innerHTML = '<h3 class="overview">' + options[2].overview + '</h3>';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   generateLaws();
-  var button = document.getElementById("card");
+  var button = document.getElementById("CorrectAnswer");
   button.addEventListener('click', function() {
-    generateLaws();
+      document.getElementById("CorrectAnswer").classList.add("correct");
+      document.getElementById("Answercard2").classList.add("reduceOpacity");
+      document.getElementById("Answercard3").classList.add("reduceOpacity");
+      document.getElementById('answer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
     });
 });
