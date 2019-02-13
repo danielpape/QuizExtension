@@ -28,6 +28,7 @@
      opacity: 0.8;
      line-height: 1.2;
      letter-spacing: 2px;
+     cursor: pointer;
 }
  #header {
      margin-top: 10%;
@@ -45,6 +46,7 @@
      display: inline-block;
      color: #f4f1d0;
      height: 500px;
+     cursor: pointer;
 }
  .Answercard:hover {
      transform: scale(1.02);
