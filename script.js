@@ -106,30 +106,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var button = document.getElementById("Answercard1");
   button.addEventListener('click', function() {
 
-      if(options[0].overview == correctAnswer.overview){document.getElementById("Answercard1").classList.add("correct");
+      if(options[0].overview == correctAnswer.overview){
       document.getElementById("Answercard1").classList.add("correct");
       document.getElementById("Answercard2").classList.add("reduceOpacity");
       document.getElementById("Answercard3").classList.add("reduceOpacity");
       document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
       document.getElementById('tickdiv').classList.add("drawn");}
-      else {
-        document.getElementById("Answercard1").classList.add("correct");
-        document.getElementById("Answercard2").classList.add("reduceOpacity");
-        document.getElementById("Answercard3").classList.add("reduceOpacity");
-        document.getElementById('tick').classList.add("displayNone");
-        document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
-        document.getElementById('crossdiv').classList.add("drawn");
-      }
-    });
-    var answercard2  = document.getElementById("Answercard2");
-    answercard2.addEventListener('click', function() {
-      if(options[1].overview == correctAnswer.overview){document.getElementById("Answercard1").classList.add("correct");
-      document.getElementById("Answercard1").classList.add("reduceOpacity");
-      document.getElementById("Answercard2").classList.add("correct");
-      document.getElementById("Answercard3").classList.add("reduceOpacity");
-      document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
-      document.getElementById('tickdiv').classList.add("drawn");}
-      else {
+      else if(options[1].overview == correctAnswer.overview){
         document.getElementById("Answercard1").classList.add("reduceOpacity");
         document.getElementById("Answercard2").classList.add("correct");
         document.getElementById("Answercard3").classList.add("reduceOpacity");
@@ -137,22 +120,63 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
         document.getElementById('crossdiv').classList.add("drawn");
       }
-      });
-      var answercard3  = document.getElementById("Answercard3");
-      answercard3.addEventListener('click', function() {
-        if(options[2].overview == correctAnswer.overview){document.getElementById("Answercard1").classList.add("correct");
+      else if(options[2].overview == correctAnswer.overview){
         document.getElementById("Answercard1").classList.add("reduceOpacity");
         document.getElementById("Answercard2").classList.add("reduceOpacity");
         document.getElementById("Answercard3").classList.add("correct");
+        document.getElementById('tick').classList.add("displayNone");
+        document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+        document.getElementById('crossdiv').classList.add("drawn");
+      }
+    });
+    var answercard2  = document.getElementById("Answercard2");
+    answercard2.addEventListener('click', function() {
+      if(options[0].overview == correctAnswer.overview){
+      document.getElementById("Answercard1").classList.add("correct");
+      document.getElementById("Answercard2").classList.add("reduceOpacity");
+      document.getElementById("Answercard3").classList.add("reduceOpacity");
+      document.getElementById('tick').classList.add("displayNone");
+      document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+      document.getElementById('crossdiv').classList.add("drawn");}
+      else if(options[1].overview == correctAnswer.overview){
+        document.getElementById("Answercard1").classList.add("reduceOpacity");
+        document.getElementById("Answercard2").classList.add("correct");
+        document.getElementById("Answercard3").classList.add("reduceOpacity");
         document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
-        document.getElementById('tickdiv').classList.add("drawn");}
-        else {
+        document.getElementById('tickdiv').classList.add("drawn");;
+      }
+      else if(options[2].overview == correctAnswer.overview){
+        document.getElementById("Answercard1").classList.add("reduceOpacity");
+        document.getElementById("Answercard2").classList.add("reduceOpacity");
+        document.getElementById("Answercard3").classList.add("correct");
+        document.getElementById('tick').classList.add("displayNone");
+        document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+        document.getElementById('crossdiv').classList.add("drawn");
+      }
+      });
+      var answercard3  = document.getElementById("Answercard3");
+      answercard3.addEventListener('click', function() {
+        if(options[0].overview == correctAnswer.overview){
+        document.getElementById("Answercard1").classList.add("correct");
+        document.getElementById("Answercard2").classList.add("reduceOpacity");
+        document.getElementById("Answercard3").classList.add("reduceOpacity");
+        document.getElementById('tick').classList.add("displayNone");
+        document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+        document.getElementById('crossdiv').classList.add("drawn");}
+        else if(options[1].overview == correctAnswer.overview){
+          document.getElementById("Answercard1").classList.add("reduceOpacity");
+          document.getElementById("Answercard2").classList.add("correct");
+          document.getElementById("Answercard3").classList.add("reduceOpacity");
+          document.getElementById('tick').classList.add("displayNone");
+          document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+          document.getElementById('crossdiv').classList.add("drawn");;
+        }
+        else if(options[2].overview == correctAnswer.overview){
           document.getElementById("Answercard1").classList.add("reduceOpacity");
           document.getElementById("Answercard2").classList.add("reduceOpacity");
           document.getElementById("Answercard3").classList.add("correct");
-          document.getElementById('tick').classList.add("displayNone");
-          document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
-          document.getElementById('crossdiv').classList.add("drawn");
+          document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
+          document.getElementById('tickdiv').classList.add("drawn");
         }
         });
 });
