@@ -29,19 +29,15 @@ let principles = [
 },
 {
   name: "Law of Proximity",
-  overview: "Objects that are near, or proximate to each other, tend to be grouped together.",
+  overview: "Objects that are near each other tend to be grouped together.",
 },
 {
   name: "Law of Similarity",
-  overview: "The human eye tends to perceive similar elements in a design as a complete picture, shape, or group, even if those elements are separated.",
+  overview: "The human eye tends to perceive comparable elements in a design as a complete picture, shape, or group, even if those elements are separated.",
 },
 {
   name: "Law of Uniform Connectedness",
-  overview: "Elements that are visually connected are perceived as more related than elements with no connection.",
-},
-{
-  name: "Law of Proximity",
-  overview: "Objects that are near, or proximate to each other, tend to be grouped together.",
+  overview: "Elements that are visual similarities are perceived as more related than elements with no similarities.",
 },
 {
   name: "Miller&#8217;s Law",
@@ -53,7 +49,7 @@ let principles = [
 },
 {
   name: "Pareto Principle",
-  overview: "The Pareto principle states that, for many events, roughly 80% of the effects come from 20% of the causes.",
+  overview: "For many events roughly 80% of the effects come from 20% of the causes.",
 },
 {
   name: "Parkinson&#8217;s Law",
@@ -69,11 +65,11 @@ let principles = [
 },
 {
   name: "Tesler&#8217;s Law",
-  overview: "Tesler&#8217;s Law, also known as The Law of Conservation of Complexity, states that for any system there is a certain amount of complexity which cannot be reduced.",
+  overview: "For any system there is a certain amount of complexity which cannot be reduced.",
 },
 {
   name: "Von Restorff Effect",
-  overview: "The Von Restorff effect, also known as The Isolation Effect, predicts that when multiple similar objects are present, the one that differs from the rest is most likely to be remembered.",
+  overview: "When multiple similar objects are present, the one that differs from the rest is most likely to be remembered.",
 },
 {
   name: "Zeigarnik Effect",
