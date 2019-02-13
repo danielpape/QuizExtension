@@ -77,7 +77,22 @@ body {
 }
 
 .correctLabel {
-  color:darkgreen;
+  color:#81C784;
+  margin-top:16px;
+}
+
+.IncorrectLabel {
+  color:#E57373;
+  margin-top:16px;
+}
+
+.drawn + svg .path{
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+
+.displayNone {
+  display: none;
 }
 
 .loadMoreBtn {
@@ -115,9 +130,65 @@ body {
 svg {
     width: 6.4rem;
     height: 6.4rem;
-    fill: #f4f1d0;
-    margin-bottom: 1.6rem;
+    fill: #81C784;
+    margin:64px auto auto auto;
     display:flex;
+}
+
+.circ{
+    opacity: 0;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.tick{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+    transition: stroke-dashoffset 1s 0.5s ease-out;
+}
+
+.cross1{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 1s 0.8s ease-out;
+    -moz-transition: stroke-dashoffset 1s 0.8s ease-out;
+    -ms-transition: stroke-dashoffset 1s 0.8s ease-out;
+    -o-transition: stroke-dashoffset 1s 0.8s ease-out;
+    transition: stroke-dashoffset 1s 0.8s ease-out;
+}
+.cross2{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+    transition: stroke-dashoffset 1s 0.5s ease-out;
+}
+
+.circ2{
+    opacity: 0;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+
+.drawn + svg .path{
+    opacity: 1;
+    stroke-dashoffset: 0;
 }
 
 @keyframes fade {

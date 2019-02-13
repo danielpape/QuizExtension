@@ -107,6 +107,25 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById("CorrectAnswer").classList.add("correct");
       document.getElementById("Answercard2").classList.add("reduceOpacity");
       document.getElementById("Answercard3").classList.add("reduceOpacity");
-      document.getElementById('answer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
+      document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
+      document.getElementById('tickdiv').classList.add("drawn");
     });
+    var answercard2  = document.getElementById("Answercard2");
+    answercard2.addEventListener('click', function() {
+        document.getElementById("CorrectAnswer").classList.add("correct");
+        document.getElementById("Answercard2").classList.add("reduceOpacity");
+        document.getElementById("Answercard3").classList.add("reduceOpacity");
+        document.getElementById('tick').classList.add("displayNone");
+        document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+        document.getElementById('crossdiv').classList.add("drawn");
+      });
+      var answercard3  = document.getElementById("Answercard3");
+      answercard3.addEventListener('click', function() {
+          document.getElementById("CorrectAnswer").classList.add("correct");
+          document.getElementById("Answercard2").classList.add("reduceOpacity");
+          document.getElementById("Answercard3").classList.add("reduceOpacity");
+          document.getElementById('tick').classList.add("displayNone");
+          document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+          document.getElementById('crossdiv').classList.add("drawn");
+        });
 });
