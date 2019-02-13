@@ -91,41 +91,68 @@ function generateLaws() {
   console.log(principles);
   var incorrectIndex2 = principles[Math.floor(Math.random() * principles.length)];
 
-  var options = [correctIndex,incorrectIndex1,incorrectIndex2];
-  console.log(options);
+  options = [correctIndex,incorrectIndex1,incorrectIndex2];
+  correctAnswer = options[Math.floor(Math.random()*options.length)];
 
-document.getElementById('header').innerHTML = '<h2 class="title">' + correctIndex.name + '</h2>';
-document.getElementById('CorrectAnswer').innerHTML = '<h3 class="overview">' + options[0].overview + '</h3>';
+document.getElementById('header').innerHTML = '<h2 class="title">' + correctAnswer.name + '</h2>';
+document.getElementById('Answercard1').innerHTML = '<h3 class="overview">' + options[0].overview + '</h3>';
 document.getElementById('Answercard2').innerHTML = '<h3 class="overview">' + options[1].overview + '</h3>';
 document.getElementById('Answercard3').innerHTML = '<h3 class="overview">' + options[2].overview + '</h3>';
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   generateLaws();
-  var button = document.getElementById("CorrectAnswer");
+  var button = document.getElementById("Answercard1");
   button.addEventListener('click', function() {
-      document.getElementById("CorrectAnswer").classList.add("correct");
+
+      if(options[0].overview == correctAnswer.overview){document.getElementById("Answercard1").classList.add("correct");
+      document.getElementById("Answercard1").classList.add("correct");
       document.getElementById("Answercard2").classList.add("reduceOpacity");
       document.getElementById("Answercard3").classList.add("reduceOpacity");
       document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
-      document.getElementById('tickdiv').classList.add("drawn");
-    });
-    var answercard2  = document.getElementById("Answercard2");
-    answercard2.addEventListener('click', function() {
-        document.getElementById("CorrectAnswer").classList.add("correct");
+      document.getElementById('tickdiv').classList.add("drawn");}
+      else {
+        document.getElementById("Answercard1").classList.add("correct");
         document.getElementById("Answercard2").classList.add("reduceOpacity");
         document.getElementById("Answercard3").classList.add("reduceOpacity");
         document.getElementById('tick').classList.add("displayNone");
         document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
         document.getElementById('crossdiv').classList.add("drawn");
+      }
+    });
+    var answercard2  = document.getElementById("Answercard2");
+    answercard2.addEventListener('click', function() {
+      if(options[1].overview == correctAnswer.overview){document.getElementById("Answercard1").classList.add("correct");
+      document.getElementById("Answercard1").classList.add("reduceOpacity");
+      document.getElementById("Answercard2").classList.add("correct");
+      document.getElementById("Answercard3").classList.add("reduceOpacity");
+      document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
+      document.getElementById('tickdiv').classList.add("drawn");}
+      else {
+        document.getElementById("Answercard1").classList.add("reduceOpacity");
+        document.getElementById("Answercard2").classList.add("correct");
+        document.getElementById("Answercard3").classList.add("reduceOpacity");
+        document.getElementById('tick').classList.add("displayNone");
+        document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
+        document.getElementById('crossdiv').classList.add("drawn");
+      }
       });
       var answercard3  = document.getElementById("Answercard3");
       answercard3.addEventListener('click', function() {
-          document.getElementById("CorrectAnswer").classList.add("correct");
+        if(options[2].overview == correctAnswer.overview){document.getElementById("Answercard1").classList.add("correct");
+        document.getElementById("Answercard1").classList.add("reduceOpacity");
+        document.getElementById("Answercard2").classList.add("reduceOpacity");
+        document.getElementById("Answercard3").classList.add("correct");
+        document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
+        document.getElementById('tickdiv').classList.add("drawn");}
+        else {
+          document.getElementById("Answercard1").classList.add("reduceOpacity");
           document.getElementById("Answercard2").classList.add("reduceOpacity");
-          document.getElementById("Answercard3").classList.add("reduceOpacity");
+          document.getElementById("Answercard3").classList.add("correct");
           document.getElementById('tick').classList.add("displayNone");
           document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
           document.getElementById('crossdiv').classList.add("drawn");
+        }
         });
 });
