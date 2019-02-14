@@ -113,21 +113,21 @@ function generateLaws() {
 }
 
 function answerCard1Correct() {
-	document.getElementById("Answercard1").classList.add("correct");
+	document.getElementById("Answercard1").classList.add("correctCard");
 	document.getElementById("Answercard2").classList.add("reduceOpacity");
 	document.getElementById("Answercard3").classList.add("reduceOpacity");
 }
 
 function answerCard2Correct() {
 	document.getElementById("Answercard1").classList.add("reduceOpacity");
-	document.getElementById("Answercard2").classList.add("correct");
+	document.getElementById("Answercard2").classList.add("correctCard");
 	document.getElementById("Answercard3").classList.add("reduceOpacity");
 }
 
 function answerCard3Correct() {
 	document.getElementById("Answercard1").classList.add("reduceOpacity");
 	document.getElementById("Answercard2").classList.add("reduceOpacity");
-	document.getElementById("Answercard3").classList.add("correct");
+	document.getElementById("Answercard3").classList.add("correctCard");
 }
 
 function showCorrectLabel() {
