@@ -133,58 +133,77 @@ function answerCard3Correct() {
 function showCorrectLabel() {
 	document.getElementById('Correctanswer').innerHTML = '<h2 class="title correctLabel">Correct</h2>';
 	document.getElementById('tickdiv').classList.add("drawn");
+	document.getElementById('crossdiv').classList.add("displayNone");
+	document.getElementById('Incorrectanswer').classList.add("displayNone");
 }
 
 function showIncorrectLabel() {
 	document.getElementById('tick').classList.add("displayNone");
+	document.getElementById('Correctanswer').classList.add("displayNone");
 	document.getElementById('Incorrectanswer').innerHTML = '<h2 class="title IncorrectLabel">Incorrect</h2>';
 	document.getElementById('crossdiv').classList.add("drawn");
 }
 
+function answerCard1Click() {
+	if (options[0].overview == correctAnswer.overview) {
+		answerCard1Correct()
+		showCorrectLabel();
+	} else if (options[1].overview == correctAnswer.overview) {
+		answerCard2Correct()
+		showIncorrectLabel();
+	} else if (options[2].overview == correctAnswer.overview) {
+		answerCard3Correct();
+		showIncorrectLabel();
+	}
+	removeEventListeners();
+}
+
+function answerCard2Click() {
+	if (options[0].overview == correctAnswer.overview) {
+		answerCard1Correct()
+		showIncorrectLabel();
+	} else if (options[1].overview == correctAnswer.overview) {
+		answerCard2Correct()
+		showCorrectLabel();
+	} else if (options[2].overview == correctAnswer.overview) {
+		answerCard3Correct();
+		showIncorrectLabel();
+	}
+	removeEventListeners();
+}
+
+function answerCard3Click() {
+	if (options[0].overview == correctAnswer.overview) {
+		answerCard1Correct()
+		showIncorrectLabel();
+	} else if (options[1].overview == correctAnswer.overview) {
+		answerCard2Correct()
+		showIncorrectLabel();
+	} else if (options[2].overview == correctAnswer.overview) {
+		answerCard3Correct();
+		showCorrectLabel();
+	}
+	removeEventListeners();
+}
+
+function removeEventListeners() {
+	document.getElementById("Answercard1").removeEventListener("click", answerCard1Click);
+	document.getElementById("Answercard2").removeEventListener("click", answerCard2Click);
+	document.getElementById("Answercard3").removeEventListener("click", answerCard3Click);
+	console.log("event listeners removed");
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 	generateLaws();
-	var answercard1 = document.getElementById("Answercard1");
-	answercard1.addEventListener('click', function () {
+	answercard1 = document.getElementById("Answercard1");
+	answercard1.addEventListener('click', answerCard1Click);
+	answercard2 = document.getElementById("Answercard2");
+	answercard2.addEventListener('click', answerCard2Click);
+	answercard3 = document.getElementById("Answercard3");
+	answercard3.addEventListener('click', answerCard3Click);
 
-		if (options[0].overview == correctAnswer.overview) {
-			answerCard1Correct()
-			showCorrectLabel();
-		} else if (options[1].overview == correctAnswer.overview) {
-			answerCard2Correct()
-			showIncorrectLabel();
-		} else if (options[2].overview == correctAnswer.overview) {
-			answerCard3Correct();
-			showIncorrectLabel();
-		}
-	});
-	var answercard2 = document.getElementById("Answercard2");
-	answercard2.addEventListener('click', function () {
-		if (options[0].overview == correctAnswer.overview) {
-			answerCard1Correct()
-			showIncorrectLabel();
-		} else if (options[1].overview == correctAnswer.overview) {
-			answerCard2Correct()
-			showCorrectLabel();
-		} else if (options[2].overview == correctAnswer.overview) {
-			answerCard3Correct();
-			showIncorrectLabel();
-		}
-	});
-	var answercard3 = document.getElementById("Answercard3");
-	answercard3.addEventListener('click', function () {
-		if (options[0].overview == correctAnswer.overview) {
-			answerCard1Correct()
-			showIncorrectLabel();
-		} else if (options[1].overview == correctAnswer.overview) {
-			answerCard2Correct()
-			showIncorrectLabel();
-		} else if (options[2].overview == correctAnswer.overview) {
-			answerCard3Correct();
-			showCorrectLabel();
-		}
-	});
-	var answercard1 = document.getElementById("header");
-	answercard1.addEventListener('click', function () {
+	var header = document.getElementById("header");
+	header.addEventListener('click', function () {
 		location.reload();
 	});
 });
