@@ -106,21 +106,24 @@ function generateLaws() {
 	correctAnswer = options[Math.floor(Math.random() * options.length)];
 
 	document.getElementById('header').innerHTML = '<h2 class="title">' + correctAnswer.name + '</h2>';
-	document.getElementById('Answercard1').innerHTML = '<h3 class="overview">' + options[0].overview + '</h3><p class="moreInfoLink">';
-	document.getElementById('Answercard2').innerHTML = '<h3 class="overview">' + options[1].overview + '</h3><p class="moreInfoLink">';
-	document.getElementById('Answercard3').innerHTML = '<h3 class="overview">' + options[2].overview + '</h3><p class="moreInfoLink">';
+	document.getElementById('Answercard1').innerHTML = '<h3 class="overview">' + options[0].overview + '</h3><a id="Answercard1-learnMoreLink" href="' + options[0].link + '" class="Answercard-learnMoreLink displayNone">Learn More<svg class="openIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>';
+	document.getElementById('Answercard2').innerHTML = '<h3 class="overview">' + options[1].overview + '</h3><a id="Answercard2-learnMoreLink" href="' + options[0].link + '" class="Answercard-learnMoreLink displayNone">Learn More<svg class="openIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>';
+	document.getElementById('Answercard3').innerHTML = '<h3 class="overview">' + options[2].overview + '</h3><a id="Answercard3-learnMoreLink" href="' + options[0].link + '" class="Answercard-learnMoreLink displayNone">Learn More<svg class="openIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>';
 
 }
 
 function answerCard1Correct() {
 	document.getElementById("Answercard1").classList.add("correctCard");
+	document.getElementById("Answercard1-learnMoreLink").classList.remove("displayNone");
 	document.getElementById("Answercard2").classList.add("reduceOpacity");
 	document.getElementById("Answercard3").classList.add("reduceOpacity");
+
 }
 
 function answerCard2Correct() {
 	document.getElementById("Answercard1").classList.add("reduceOpacity");
 	document.getElementById("Answercard2").classList.add("correctCard");
+	document.getElementById("Answercard2-learnMoreLink").classList.remove("displayNone");
 	document.getElementById("Answercard3").classList.add("reduceOpacity");
 }
 
@@ -128,6 +131,8 @@ function answerCard3Correct() {
 	document.getElementById("Answercard1").classList.add("reduceOpacity");
 	document.getElementById("Answercard2").classList.add("reduceOpacity");
 	document.getElementById("Answercard3").classList.add("correctCard");
+	document.getElementById("Answercard3-learnMoreLink").classList.remove("displayNone");
+
 }
 
 function showCorrectLabel() {
